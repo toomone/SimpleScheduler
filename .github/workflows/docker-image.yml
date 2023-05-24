@@ -32,7 +32,9 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         # relative path to the place where source code with Dockerfile is located
-        context: ./
+        context: .
+        build-args: |
+          BUILD_FROM="ghcr.io/hassio-addons/debian-base/amd64:5.3.1"
         # Note: tags has to be all lower-case
         tags: |
           toomone/mysimplescheduler:latest 
